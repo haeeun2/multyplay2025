@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multy Play 2025 - The Sequence of Time</title>
     <style>
+        /* 'MULTY PLAY' 제목이 나타나는 효과 */
+@keyframes titleReveal {
+    from { opacity: 0; transform: translateY(60px) scale(0.9); filter: blur(10px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+/* 'MULTY PLAY' 제목이 위아래로 천천히 움직이는 효과 */
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 부제목 'The Sequence Of Time'이 반짝이는 효과 */
+@keyframes shimmer {
+    0%, 100% { text-shadow: 0 0 20px rgba(180, 160, 255, 0.3); }
+    50% { text-shadow: 0 0 30px rgba(180, 160, 255, 0.6); }
+}
+
+/* 테마 '시작과 끝' 글씨가 깜빡이는 효과 */
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* 중앙선이 양쪽으로 펼쳐지는 효과 */
+@keyframes expand {
+    to { transform: scaleX(1); }
+}
+
+/* 별(✦)이 반짝이며 돌아가는 효과 */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:wght@400;500;600;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
         
         * {
