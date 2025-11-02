@@ -198,7 +198,7 @@
 
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(4.5rem, 16vw, 11rem);
+            font-size: clamp(3rem, 12vw, 11rem);
             font-weight: 900;
             line-height: 0.95;
             margin: 50px 0;
@@ -206,11 +206,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: 12px;
+            letter-spacing: clamp(4px, 1.2vw, 12px);
             animation: fadeInUp 1.2s ease forwards 0.4s;
             opacity: 0;
             filter: drop-shadow(0 15px 50px rgba(180, 160, 255, 0.7));
             text-transform: uppercase;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            max-width: 100%;
         }
 
         @keyframes fadeInUp {
@@ -226,13 +229,17 @@
 
         .subtitle {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.4rem, 4.5vw, 2.8rem);
+            font-size: clamp(1.1rem, 3.5vw, 2.8rem);
             font-weight: 400;
-            letter-spacing: 8px;
+            letter-spacing: clamp(3px, 0.8vw, 8px);
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 25px;
             animation: fadeInUp 1.2s ease forwards 0.8s;
             opacity: 0;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            padding: 0 10px;
         }
 
         .theme {
@@ -559,16 +566,53 @@
 
         @media (max-width: 768px) {
             .main-title {
-                letter-spacing: 6px;
+                font-size: clamp(2.5rem, 10vw, 4.5rem);
+                letter-spacing: clamp(2px, 0.5vw, 6px);
+                margin: 30px 0;
             }
             
             .subtitle {
-                letter-spacing: 4px;
+                font-size: clamp(0.9rem, 3vw, 1.4rem);
+                letter-spacing: clamp(2px, 0.4vw, 4px);
+                padding: 0 15px;
+            }
+
+            .year {
+                font-size: 1rem;
+                letter-spacing: clamp(8px, 2vw, 16px);
+            }
+
+            .theme {
+                font-size: 1.1rem;
+                letter-spacing: clamp(6px, 1.5vw, 14px);
+            }
+
+            .section-title {
+                font-size: clamp(2rem, 8vw, 2.8rem);
+                letter-spacing: clamp(4px, 1vw, 12px);
+                padding: 0 20px;
+            }
+
+            .dresscode-text {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+                letter-spacing: clamp(3px, 0.8vw, 8px);
+            }
+
+            .credit-item {
+                font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+                letter-spacing: clamp(2px, 0.5vw, 5px);
+                padding: 0 15px;
+                word-break: keep-all;
             }
             
             .info-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
+                padding: 0 10px;
+            }
+
+            .info-card {
+                padding: 50px 35px;
             }
             
             .timeline::before {
@@ -583,6 +627,7 @@
             
             .timeline-content {
                 width: 100%;
+                padding: 35px 30px;
             }
             
             .timeline-dot {
@@ -590,7 +635,44 @@
             }
             
             .dresscode-card {
-                padding: 60px 35px;
+                padding: 60px 25px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .divider-container {
+                gap: 15px;
+                margin: 40px 0;
+            }
+
+            .divider {
+                width: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: clamp(2rem, 9vw, 3rem);
+                letter-spacing: clamp(1px, 0.3vw, 3px);
+            }
+
+            .subtitle {
+                font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+                letter-spacing: clamp(1px, 0.3vw, 3px);
+            }
+
+            .info-card {
+                padding: 40px 25px;
+            }
+
+            .timeline-content {
+                padding: 30px 20px;
+            }
+
+            .dresscode-card {
+                padding: 50px 20px;
             }
         }
     </style>
@@ -610,7 +692,7 @@
         <div class="hero-content">
             <div class="year">2025</div>
             <h1 class="main-title">MULTY<br>PLAY</h1>
-            <p class="subtitle">The Sequence of Time</p>
+            <p class="subtitle">The Sequence Of Time</p>
             <div class="divider-container">
                 <div class="divider"></div>
                 <span class="star">✦</span>
@@ -713,10 +795,9 @@
 
     <footer class="footer">
         <div class="credits">
-            <div class="credit-item"><strong>Organized by</strong> 멀티미디어전공 학생회 Palette</div>
-            <div class="credit-item"><strong>Department of</strong> Multimedia</div>
+            <div class="credit-item"><strong>Organized by</strong> Department of Multimedia Student Council Palette</div>
+            <div class="credit-item"><strong>2025</strong> Academic Festival</div>
         </div>
-        <p class="footer-text">2025 Academic Festival</p>
     </footer>
 
     <script>
