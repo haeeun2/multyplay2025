@@ -186,11 +186,11 @@
         }
 
         .year {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
-            font-weight: 400;
-            letter-spacing: 16px;
-            color: rgba(180, 160, 255, 0.6);
+            font-family: 'Courier New', monospace;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 20px;
+            color: rgba(180, 160, 255, 0.5);
             margin-bottom: 40px;
             animation: fadeInUp 1.2s ease forwards, glitchText 4s infinite;
             text-transform: uppercase;
@@ -214,13 +214,18 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: clamp(4px, 1.2vw, 12px);
-            animation: fadeInUp 1.2s ease forwards 0.4s;
+            animation: fadeInUp 1.2s ease forwards 0.4s, titleFloat 6s ease-in-out infinite 2s;
             opacity: 0;
             filter: drop-shadow(0 15px 50px rgba(180, 160, 255, 0.7));
             text-transform: uppercase;
             word-break: keep-all;
             overflow-wrap: break-word;
             max-width: 100%;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         @keyframes fadeInUp {
@@ -241,12 +246,17 @@
             letter-spacing: clamp(3px, 0.8vw, 8px);
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 25px;
-            animation: fadeInUp 1.2s ease forwards 0.8s;
+            animation: fadeInUp 1.2s ease forwards 0.8s, subtitleShimmer 4s ease-in-out infinite 2.5s;
             opacity: 0;
             word-break: keep-all;
             overflow-wrap: break-word;
             max-width: 100%;
             padding: 0 10px;
+        }
+
+        @keyframes subtitleShimmer {
+            0%, 100% { text-shadow: 0 0 20px rgba(180, 160, 255, 0.3); }
+            50% { text-shadow: 0 0 30px rgba(180, 160, 255, 0.6); }
         }
 
         .theme {
@@ -255,10 +265,15 @@
             letter-spacing: 14px;
             color: rgba(180, 160, 255, 0.75);
             margin-top: 40px;
-            animation: fadeInUp 1.2s ease forwards 1.2s;
+            animation: fadeInUp 1.2s ease forwards 1.2s, pulse 3s ease-in-out infinite 3s;
             opacity: 0;
             font-weight: 400;
             text-transform: uppercase;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.75; }
+            50% { opacity: 1; }
         }
 
         .divider-container {
@@ -280,7 +295,18 @@
         .star {
             color: rgba(180, 160, 255, 0.7);
             font-size: 1.5rem;
-            animation: starTwinkle 3s ease-in-out;
+            animation: starTwinkle 2s ease-in-out 3;
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% { 
+                opacity: 0.6; 
+                transform: scale(1) rotate(0deg); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.2) rotate(180deg); 
+            }
         }
 
         .info-section {
@@ -461,6 +487,16 @@
             transform: translateX(-50%);
             box-shadow: 0 0 35px rgba(180, 160, 255, 0.9);
             z-index: 2;
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { 
+                box-shadow: 0 0 35px rgba(180, 160, 255, 0.9); 
+            }
+            50% { 
+                box-shadow: 0 0 50px rgba(180, 160, 255, 1), 0 0 70px rgba(180, 160, 255, 0.5); 
+            }
         }
 
         .dresscode-section {
@@ -532,6 +568,12 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-transform: uppercase;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(180, 160, 255, 0.5)); }
+            50% { filter: drop-shadow(0 0 40px rgba(180, 160, 255, 0.8)); }
         }
 
         .footer {
@@ -561,6 +603,15 @@
         .credit-item strong {
             color: rgba(180, 160, 255, 0.7);
             font-weight: 600;
+        }
+
+        .footer-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.35);
+            letter-spacing: 3px;
+            font-weight: 400;
+            margin-top: 40px;
         }
 
         @media (max-width: 768px) {
