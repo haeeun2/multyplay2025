@@ -162,6 +162,7 @@
             font-size: 1.6rem;
             font-weight: 700;
             letter-spacing: 20px;
+            padding-left: 20px;
             color: rgba(180, 160, 255, 0.5);
             margin-bottom: 40px;
             animation: fadeInUp 1.2s ease forwards, glitchText 4s infinite;
@@ -328,9 +329,9 @@
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 6vw, 5rem);
+            font-size: clamp(2.2rem, 6.5vw, 6rem);
             text-align: center;
-            letter-spacing: clamp(3px, 1vw, 12px);
+            letter-spacing: clamp(2px, 0.8vw, 12px);
             margin-bottom: 100px;
             padding: 0 20px;
             background: linear-gradient(180deg, #fff 0%, #c8b8ff 100%);
@@ -339,6 +340,12 @@
             background-clip: text;
             font-weight: 900;
             text-transform: uppercase;
+            word-break: keep-all;
+        }
+
+        .section-title.participants-title {
+            font-size: clamp(2rem, 6vw, 5.5rem);
+            letter-spacing: clamp(1px, 0.7vw, 10px);
         }
 
         .timeline {
@@ -360,7 +367,7 @@
 
         .timeline-item {
             position: relative;
-            margin: 60px 0;
+            margin: 45px 0;
             display: flex;
             align-items: center;
             opacity: 0;
@@ -379,7 +386,7 @@
 
         .timeline-content {
             width: 45%;
-            padding: 40px 45px;
+            padding: 20px 25px;
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(30px);
             border: 1px solid rgba(180, 160, 255, 0.12);
@@ -395,19 +402,19 @@
 
         .timeline-time {
             font-family: 'Cinzel', serif;
-            font-size: 1.7rem;
-            color: rgba(180, 160, 255, 0.85);
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            font-weight: 600;
+            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+            color: rgba(200, 180, 255, 1);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .timeline-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            line-height: 1.9;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
+            font-size: clamp(1.05rem, 2.3vw, 1.25rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
         }
 
         .timeline-dot {
@@ -432,7 +439,7 @@
         .dresscode-card {
             max-width: 750px;
             margin: 0 auto;
-            padding: 80px 60px;
+            padding: 60px 40px;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(40px);
             border: 2px solid rgba(180, 160, 255, 0.25);
@@ -473,19 +480,19 @@
 
         .dresscode-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
-            letter-spacing: 8px;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            letter-spacing: clamp(4px, 1vw, 8px);
             color: rgba(180, 160, 255, 0.7);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 600;
             text-transform: uppercase;
         }
 
         .dresscode-text {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-size: clamp(2.5rem, 10vw, 4.5rem);
             font-weight: 900;
-            letter-spacing: clamp(2px, 1vw, 8px);
+            letter-spacing: clamp(3px, 1.5vw, 10px);
             background: linear-gradient(180deg, #fff 0%, #c8b8ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -508,7 +515,7 @@
         }
 
         .team-card {
-            padding: 40px 35px;
+            padding: 35px 30px;
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(30px);
             border: 1px solid rgba(180, 160, 255, 0.12);
@@ -534,7 +541,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: rgba(180, 160, 255, 0.9);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
             letter-spacing: 2px;
         }
@@ -545,11 +552,13 @@
             color: #FFFFFFCC;
             font-weight: 600;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             letter-spacing: 2px;
             text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
 
+        /* --- [데스크탑 기본] --- */
+        /* 기본 4열 정렬 */
         .team-members {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.1rem;
@@ -564,10 +573,11 @@
 
         .team-members span {
             display: inline-block;
-            min-width: calc(25% - 12px);
             text-align: center;
+            min-width: calc(25% - 12px);
         }
 
+        /* 5번째부터는 3열 */
         .team-members span:nth-child(n+5) {
             min-width: calc(33.333% - 11px);
         }
@@ -588,9 +598,9 @@
 
         .credit-item {
             font-family: 'Cinzel', serif;
-            font-size: 1.05rem;
+            font-size: clamp(0.75rem, 1.5vw, 0.95rem);
             color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 5px;
+            letter-spacing: clamp(2px, 0.5vw, 4px);
             text-transform: uppercase;
         }
 
@@ -637,26 +647,6 @@
             .timeline-dot {
                 left: 30px;
             }
-
-            /* 7명 팀: 2-2-3 레이아웃 */
-            .team-members {
-                gap: 12px 8px;
-            }
-
-            .team-members span {
-                min-width: calc(50% - 4px);
-            }
-
-            .team-members span:nth-child(5),
-            .team-members span:nth-child(6),
-            .team-members span:nth-child(7) {
-                min-width: calc(33.333% - 6px);
-            }
-
-            /* 6명 팀: 3-3 레이아웃 */
-            .team-card:has(.team-members span:nth-child(6):last-child) .team-members span {
-                min-width: calc(33.333% - 6px);
-            }
         }
 
         @media (max-width: 480px) {
@@ -677,28 +667,63 @@
             }
 
             .section-title {
-                font-size: clamp(1.8rem, 8vw, 3rem);
+                font-size: clamp(2.5rem, 9vw, 4rem);
                 letter-spacing: clamp(2px, 0.5vw, 6px);
             }
 
+            .section-title.participants-title {
+                font-size: clamp(1.8rem, 7vw, 3.5rem);
+                letter-spacing: clamp(1px, 0.4vw, 5px);
+            }
+
             .dresscode-text {
-                font-size: clamp(1.5rem, 10vw, 3rem);
+                font-size: clamp(2rem, 12vw, 3.5rem);
             }
 
-            /* 7명 팀: 2-2-3 레이아웃 */
+            .dresscode-card {
+                padding: 40px 30px;
+            }
+
+            .timeline-content {
+                padding: 18px 22px;
+            }
+
+            .timeline-time {
+                font-size: clamp(1.2rem, 3vw, 1.4rem);
+                margin-bottom: 8px;
+            }
+
+            .timeline-text {
+                font-size: clamp(1rem, 2.5vw, 1.2rem);
+            }
+
+            /* --- [모바일 정렬 로직] --- */
+            /* 간격 미세 조정 */
+            .team-members {
+                gap: 8px 10px; 
+            }
+
+            /* 1. 기본: 2명씩 (5명일 때 등) */
             .team-members span {
-                min-width: calc(50% - 4px);
+                min-width: calc(50% - 5px);
+            }
+            .team-members span:nth-child(n+5) {
+                min-width: calc(50% - 5px);
             }
 
-            .team-members span:nth-child(5),
-            .team-members span:nth-child(6),
-            .team-members span:nth-child(7) {
-                min-width: calc(33.333% - 6px);
+            /* 2. [6명일 때] -> 3명 / 3명 (3-3 정렬) */
+            .team-members:has(span:nth-child(6):last-child) span {
+                min-width: calc(33.333% - 7px);
             }
 
-            /* 6명 팀: 3-3 레이아웃 */
-            .team-card:has(.team-members span:nth-child(6):last-child) .team-members span {
-                min-width: calc(33.333% - 6px);
+            /* 3. [7명일 때] -> 2명 / 2명 / 3명 (2-2-3 정렬) */
+            /* 1~4번은 50% (기본값 사용) */
+            .team-members:has(span:nth-child(7):last-child) span {
+                min-width: calc(50% - 5px); 
+            }
+            /* 5~7번은 33% */
+            .team-members:has(span:nth-child(7):last-child) span:nth-child(n+5) {
+                min-width: calc(33.333% - 7px);
             }
         }
     </style>
@@ -821,7 +846,7 @@
     </section>
 
     <section class="participants-section">
-        <h2 class="section-title">Participants</h2>
+        <h2 class="section-title participants-title">Participants</h2>
         <div class="teams-grid">
             <div class="team-card">
                 <div class="team-name">1조가 큰1냈죠</div>
